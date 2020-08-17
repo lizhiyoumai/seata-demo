@@ -1,2 +1,2 @@
-# spring-cloud-seata
+# seata-demo
 spring-cloud整合seata
