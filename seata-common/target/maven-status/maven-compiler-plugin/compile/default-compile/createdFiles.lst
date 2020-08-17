@@ -1,0 +1,4 @@
+com/seata/common/dto/ProductReduceStockDTO$ProductReduceStockDTOBuilder.class
+com/seata/common/dto/AccountReduceBalanceDTO.class
+com/seata/common/dto/AccountReduceBalanceDTO$AccountReduceBalanceDTOBuilder.class
+com/seata/common/dto/ProductReduceStockDTO.class

@@ -1,0 +1,38 @@
+server:
+  port: 8082 # 端口
+
+spring:
+  application:
+    name: account-service
+
+  datasource:
+    url: jdbc:mysql://106.15.47.197:3306/seata_account?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+
+  cloud:
+    # Nacos 作为注册中心的配置项
+    nacos:
+      discovery:
+        server-addr: 106.15.47.197:8848
+        namespace: e3ce5499-808c-424d-80ae-b71ac8f7b794
+
+# Seata 配置项，对应 SeataProperties 类
+seata:
+  application-id: ${spring.application.name} # Seata 应用编号
+  tx-service-group: ${spring.application.name}-group # Seata 事务组编号
+  # Seata 服务配置项，对应 ServiceProperties 类
+  service:
+    # 虚拟组和分组的映射
+    vgroup-mapping:
+      account-service-group: default
+    # 分组和 Seata 服务的映射
+    grouplist:
+      default: 106.15.47.197:8091
+  # Seata 注册中心配置项，对应 RegistryProperties 类
+  registry:
+    type: nacos # 注册中心类型，默认为 file
+    nacos:
+      serverAddr: 106.15.47.197:8848 # Nacos 服务地址
+      namespace: e3ce5499-808c-424d-80ae-b71ac8f7b794 # Nacos 命名空间
