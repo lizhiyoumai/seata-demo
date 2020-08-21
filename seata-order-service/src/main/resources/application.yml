@@ -37,7 +37,7 @@ seata:
       serverAddr: 106.15.47.197:8848 # Nacos 服务地址
       namespace: e3ce5499-808c-424d-80ae-b71ac8f7b794 # Nacos 命名空间
 
-### 通过事务分组如何找到后端集群？(以Nacos为例)
+### 通过事务分组如何找到TC集群？(以Nacos为例)
 #  1.获取事务分组
 #  springboot可配置在yml、properties中，服务启动时加载配置seata.tx-service-group，对应的值"order-service-group"即为一个事务分组名，若不配置，默认获取属性spring.application.name的值+"-fescar-service-group"
 #
